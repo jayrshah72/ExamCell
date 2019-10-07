@@ -1,0 +1,139 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Student_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <style>
+        .menu
+{
+    background-color:rgb(10,110,178);
+    width:100%;
+    padding:0px;
+    margin:0px,0px,10px;
+    height:80px;
+    color:rgb(243,243,243);
+    border-radius:5px 5px 5px 5px;
+
+}
+
+        .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width:50px;
+    background-color:white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    max-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color:wheat;
+    height:auto;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+    </style>
+
+    <script>
+        function showdiv()
+        {
+            document.getElementById("dropdown").style.display = "block";
+        }
+        function hidediv(e)
+        {
+            e.style.display = "none";
+         }
+    </script>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../CSS/StyleSheet.css" rel="stylesheet" />
+   
+   
+
+</head>
+<body >
+    <form id="form1" runat="server">
+    
+        <div class="wrapper">
+           
+            <div class="logodiv">
+                <h1 style="margin-bottom:10px;margin-top:10px;letter-spacing:10px;font-size:70px;margin-left:250px">EXAM CELL</h1>
+           </div>
+            
+            
+            <div style="height:20px;position:absolute;right:200px;top:0px"><img style="border-radius:10px" src="../images/logo.jpg" />
+                </div>
+                
+           
+            <div class="menu">
+               
+                <div><a href="Home.aspx" aria-orientation="horizontal"><img class="imglogos" src="../images/Home-logo.jpg" /></a>
+                    
+                    <div style="float:left;width:auto;background-color:none" class="dropdown">
+  <a href="#" ><img class="imglogos" src="../images/login.png" /></a>
+  <div style="max-height:none;top:80px;left:20px;color:none;background-color:none" class="dropdown-content">
+    <a href="Student_login.aspx">Student</a>
+    <a href="Adminlogin.aspx">Admin</a>    
+  </div>
+</div>
+                    
+                    
+                    
+                    <a href="Result.aspx"><img class="imglogos" src="../images/result1.jpg" /></a>
+                    <a href="contact.aspx"><img class="imglogos" src="../images/phone-icon.jpg" /></a>
+                    <a href="aboutus.aspx"><img class="imglogos" src="../images/icon-about-us.png"/></a>
+                    <a href="help.aspx"><img class="imglogos" src="../images/help.png" aria-atomic="True" dir="auto" /></a>
+                </div>
+             </div>
+          </div>     
+           
+            <div class="clear"> </div>
+
+            <div class="content">
+                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                                         </asp:ContentPlaceHolder>
+            </div>
+            <div class="clear"></div>
+            <div class="footer">
+                <h2></h2>
+            </div>
+
+        </div>
+
+
+
+      
+       
+    </form>
+</body>
+</html>
